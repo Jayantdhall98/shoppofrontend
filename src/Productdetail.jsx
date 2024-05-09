@@ -26,7 +26,7 @@ const Addtocart=async(id)=>{
 
   // console.log("current product id is :",id)
   // console.log(" current user id is",curruserdata._id)
-  const res= await fetch("http://localhost:5002/api/cart/addcart",{
+  const res= await fetch("https://shoppobackend.onrender.com/api/cart/addcart",{
          
   method:"POST",
   credentials:'include',
@@ -62,7 +62,7 @@ const Addtocart=async(id)=>{
   
   const fetchCartItems = async () => {
     try {
-      const cartItemsResponse = await fetch(`http://localhost:5002/api/cart/cartproducts`,{
+      const cartItemsResponse = await fetch(`https://shoppobackend.onrender.com/api/cart/cartproducts`,{
         method:"GET",
         credentials:"include"
       });

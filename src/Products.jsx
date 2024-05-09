@@ -18,7 +18,7 @@ const navigate=useNavigate()
 useEffect(() => {
   // Check if user data is available
   axios.defaults.withCredentials=true;
-  axios.get('http://localhost:5002/api/auth/').then(res=>{
+  axios.get('https://shoppobackend.onrender.com/api/auth/').then(res=>{
     console.log(res)
     if(res.data.value){
            if(res.data.value&& res.data.usertype==="admin"){
@@ -52,7 +52,7 @@ useEffect(()=>{
 
       
       
-      const fetchproducts=await fetch("http://localhost:5002/api/product/allproducts")
+      const fetchproducts=await fetch("https://shoppobackend.onrender.com/api/product/allproducts")
       const data= await fetchproducts.json()
       setProducts(data)
       
@@ -73,7 +73,7 @@ useEffect(() => {
 
 const fetchCartItems = async () => {
   try {
-    const cartItemsResponse = await fetch(`http://localhost:5002/api/cart/cartproducts`,{
+    const cartItemsResponse = await fetch(`https://shoppobackend.onrender.com/api/cart/cartproducts`,{
       method:"GET",
       credentials:"include"
     });
@@ -93,7 +93,7 @@ const fetchCartItems = async () => {
 
 // // console.log("current product id is :",id)
 // // console.log(" current user id is",curruserdata._id)
-// const res= await fetch("http://localhost:5002/api/cart/addcart",{
+// const res= await fetch("https://shoppobackend.onrender.com/api/cart/addcart",{
        
 // method:"POST",
 // credentials:'include',
@@ -120,7 +120,7 @@ const fetchCartItems = async () => {
 // }
 
 const logout=async(req,res)=>{
-       await fetch("http://localhost:5002/api/auth/destroy",{
+       await fetch("https://shoppobackend.onrender.com/api/auth/destroy",{
         method:"GET",
         credentials:"include"
        }).then(alert("logged Out"))

@@ -10,7 +10,7 @@ export default function Cart() {
 
   useEffect(() => {
     axios.defaults.withCredentials = true;
-    axios.get('http://localhost:5002/api/auth/').then((res) => {
+    axios.get('https://shoppobackend.onrender.com/api/auth/').then((res) => {
       if (res.data.value) {
         console.log('User authenticated');
       } else {
@@ -25,7 +25,7 @@ export default function Cart() {
 
   const fetchCartItems = async () => {
     try {
-      const cartItemsResponse = await fetch(`http://localhost:5002/api/cart/cartproducts`, {
+      const cartItemsResponse = await fetch(`https://shoppobackend.onrender.com/api/cart/cartproducts`, {
         method: 'GET',
         credentials: 'include',
       });
@@ -45,7 +45,7 @@ export default function Cart() {
 
 
   const deltCartitem = (productId) => {
-    fetch(`http://localhost:5002/api/cart/deltcartitem/${productId}`, {
+    fetch(`https://shoppobackend.onrender.com/api/cart/deltcartitem/${productId}`, {
       method: 'DELETE',
       credentials: 'include',
     }).then((res) => {

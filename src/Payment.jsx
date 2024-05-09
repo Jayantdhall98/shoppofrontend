@@ -145,7 +145,7 @@ export default function Payment() {
   //     try {
 
   //         console.log(orderid,orderamount)
-  //       const response = await fetch("http://localhost:5002/api/order/orderplaced", {
+  //       const response = await fetch("https://shoppobackend.onrender.com/api/order/orderplaced", {
   //         method: "POST",
   //         credentials: 'include',
   //         headers: {
@@ -219,9 +219,9 @@ export default function Payment() {
     try {
       const {
         data: { key },
-      } = await axios.get("http://localhost:5002/key");
+      } = await axios.get("https://shoppobackend.onrender.com/key");
       axios.defaults.withCredentials=true;
-      const { data: { order }} = await axios.post("http://localhost:5002/api/order/checkout", {
+      const { data: { order }} = await axios.post("https://shoppobackend.onrender.com/api/order/checkout", {
         amount: amount,
         name: `${firstname} ${lastname}`,
 
@@ -245,7 +245,7 @@ export default function Payment() {
         description: state&&state.desc,
         image: state&&state.img,
         order_id: order&&order.id,
-        callback_url: "http://localhost:5002/api/order/paymentverification",
+        callback_url: "https://shoppobackend.onrender.com/api/order/paymentverification",
         prefill: {
           name: `${firstname} ${lastname}`,
           email: email,

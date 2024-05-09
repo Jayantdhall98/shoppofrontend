@@ -30,7 +30,7 @@ const navigate=useNavigate()
     const fetchData = async () => {
       try {
         // Fetch paid orders
-        const paidOrdersResponse = await axios.get('http://localhost:5002/api/order/getuserpaidorders', {
+        const paidOrdersResponse = await axios.get('https://shoppobackend.onrender.com/api/order/getuserpaidorders', {
           withCredentials: true,
         });
         const paidOrders = paidOrdersResponse.data;

@@ -70,7 +70,7 @@ const AdminOrderlist = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:5002/api/order/getpaidorders');
+      const response = await axios.get('https://shoppobackend.onrender.com/api/order/getpaidorders');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);

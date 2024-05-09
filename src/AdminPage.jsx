@@ -17,7 +17,7 @@ const AdminPage = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:5002/api/auth/allusers", {
+      const response = await fetch("https://shoppobackend.onrender.com/api/auth/allusers", {
         method: "GET",
         credentials: "include",
       });
@@ -33,7 +33,7 @@ const AdminPage = () => {
   useEffect(() => {
     axios.defaults.withCredentials = true;
     axios
-      .get("http://localhost:5002/api/auth/")
+      .get("https://shoppobackend.onrender.com/api/auth/")
       .then((res) => {
         if (res.data.value && res.data.usertype === "admin") {
           console.log("User authenticated");
@@ -77,7 +77,7 @@ const AdminPage = () => {
   const handleUpdateData = async (req, res) => {
     try {
       const updatedata = await fetch(
-        `http://localhost:5002/api/users/updateuser/${userdata._id}`,
+        `https://shoppobackend.onrender.com/api/users/updateuser/${userdata._id}`,
         {
           method: "PUT",
           credentials: "include",
@@ -100,7 +100,7 @@ const AdminPage = () => {
   };
 
   const logout = async (req, res) => {
-    await fetch("http://localhost:5002/api/auth/destroy", {
+    await fetch("https://shoppobackend.onrender.com/api/auth/destroy", {
       method: "GET",
       credentials: "include",
     }).then(alert("logged Out"));

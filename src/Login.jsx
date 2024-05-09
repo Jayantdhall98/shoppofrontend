@@ -12,7 +12,7 @@ const navigate=useNavigate()
 // useEffect(() => {
 //   // Check if user data is available
 //   axios.defaults.withCredentials=true;
-//   axios.get('http://localhost:5002/xyz/').then(res=>{
+//   axios.get('https://shoppobackend.onrender.com/xyz/').then(res=>{
 //     console.log(res)
 //     if(res.data.value){
 //       // setCurruserId(res.data.userid)
@@ -29,7 +29,7 @@ const postLogin=async(e)=>{
   e.preventDefault()
            try{
           
-             const res=await fetch("http://localhost:5002/api/auth/login",{
+             const res=await fetch("https://shoppobackend.onrender.com/api/auth/login",{
                method:"POST",
                credentials:'include',
                headers:{

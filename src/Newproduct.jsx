@@ -14,7 +14,7 @@ const navigate=useNavigate()
 useEffect(() => {
   // Check if user data is available
   axios.defaults.withCredentials=true;
-  axios.get('http://localhost:5002/api/auth/').then(res=>{
+  axios.get('https://shoppobackend.onrender.com/api/auth/').then(res=>{
     // console.log(res)
     console.log(res.data.usertype)
     if(res.data.value && res.data.usertype=="admin"){
@@ -81,7 +81,7 @@ useEffect(() => {
    if(file!=""&& inputs!=""){
 
      
-     const res= await fetch("http://localhost:5002/api/product/uploadproduct",{
+     const res= await fetch("https://shoppobackend.onrender.com/api/product/uploadproduct",{
        credentials:"include",
        method:"POST",
        headers:{
